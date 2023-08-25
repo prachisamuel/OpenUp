@@ -50,30 +50,30 @@ const Wrapper = styled(Box)`
 `;
 
 export default function Post({posts}) {
-    const [ like, setLike ] = useState(FavoriteIcon);
-    const [count, setCount] = useState(posts.like.length);
-    const handleClick = async(name) => {
-        if(like==FavoriteIcon)
-        {
-            setCount(like+1);
-            let response = await addLike({name,like});//api call
-            if(!response) return;
-        }
-        else
-        {
-            setCount(like-1);
-            let response = await addLike(name,like);//api call
-            if(!response) return;
-        }
+    // const [ like, setLike ] = useState(FavoriteIcon);
+    // const [count, setCount] = useState(posts);
+    // const handleClick = async(name) => {
+    //     if(like==FavoriteIcon)
+    //     {
+    //         setCount(like+1);
+    //         // let response = await addLike({name,like});//api call
+    //         // if(!response) return;
+    //     }
+    //     else
+    //     {
+    //         setCount(like-1);
+    //         // let response = await addLike(name,like);//api call
+    //         // if(!response) return;
+    //     }
         
 
         
-    }
+    
     return (
         <PostContainer>
             <SubPostContainer>
                 {
-                    posts.map(posts => (
+                    posts && posts.map(posts => (
                     <PostComponent>
                         <UserInfo>
                             <ColorImage curcolor={posts.color} />
@@ -85,10 +85,10 @@ export default function Post({posts}) {
                             {posts.posttext}
                         </UserText>
                         <Wrapper>
-                            <IconButton onClick={handleClick(posts.username)}>
+                            {/* <IconButton onClick={handleClick}>
                                 <FavoriteIcon style={{color: "pink", textAlign: "start", margin: '5px'}} />
                                 <Typography style={{marginLeft: "5px"}}>{count}</Typography>
-                            </IconButton>
+                            </IconButton> */}
                             <IconButton>
                                 <QuestionAnswerIcon style={{color: "grey", textAlign: "start", margin: '5px'}} />
                             </IconButton>  

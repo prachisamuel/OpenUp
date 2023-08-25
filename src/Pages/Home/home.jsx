@@ -7,7 +7,7 @@ import MainPost from "../../Component/MainPostContainer/MainPost";
 
 import { getPosts } from '../../redux/actions/postActions';
 import { useDispatch,useSelector } from 'react-redux';
-
+import Navbar from '../../Component/Navbar/Navbar';
 
 const HomeStyled = styled(Box)`
     background: rgb(235,238,242);
@@ -19,6 +19,7 @@ const HomeStyled = styled(Box)`
 
 const Component = styled(Box)`
     margin: 10px 40px 0px 40px;
+    margin-top: 65px;
     display: flex;
     justify-content: space-between;
     width: 100vw;
@@ -36,7 +37,7 @@ const Home = () => {
 
     return (
         <HomeStyled>
-            
+            <Navbar/>
             <Component>
                 <Leftbar />
                 <MainPost posts={posts}/>

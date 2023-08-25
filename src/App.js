@@ -11,8 +11,7 @@ function App() {
   return (
     <DataProvider>
       <BrowserRouter>
-        <Navbar/>
-          <Box  style={{marginTop: 64}}>
+          <Box>
             <Routes>
               <Route path= '/' element={<Home />} />
               <Route path= '/signup' element={<Signup />} />
