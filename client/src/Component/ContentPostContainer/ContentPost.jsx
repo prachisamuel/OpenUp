@@ -40,7 +40,7 @@ export default function ContentPost() {
             <Content>
                 <img src={`${profileimage}`} alt="" style={{width: 40, height: 40, borderRadius: 50}} />
                 <TextFieldContainer>
-                    <TextField fullWidth id="outlined-textarea" placeholder="What's on your mind" size="small" multiline maxRows={5} sx={{border: 'none', "& fieldset": { border: 'none' },}} />
+                    <TextField fullWidth id="outlined-textarea" placeholder="What's on your mind" size="small" multiline maxRows={5} sx={{border: 'none', "& fieldset": { border: 'none' }}} />
                 </TextFieldContainer>
                 <StyledButton variant="contained">Post</StyledButton>
             </Content>

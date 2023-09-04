@@ -13,38 +13,53 @@ const MainContainerForSignup = styled(Box)`
 const SubMainContainer = styled(Box)`
     display: flex;
     align-items: center;
-    padding-top: 200px;
+    padding-top: 100px;
 `;
 
 const AppInfo = styled(Box)`
     flex: 1;
-    magrin-left: 150;
-    magrin-bottom: 172;
+    margin-left: 150px;
+    margin-bottom: 170px;
 `;
 
 const SignupInfo = styled(Box)`
     flex: 3;
 `;
 
-const TextFieldContainer = styled(Box)`
+const TextFieldContainer1 = styled(Box)`
     display: flex;
     margin-left: 30%;
     width: 40%;
-    margin-top: 20px;
     padding: 10px;
     border: none;
     border-radius: 10px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+`;
+
+const TextFieldContainer2 = styled(Box)`
+    display: flex;
+    margin-left: 30%;
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
 `;
 
 const BtnForSignup = styled(Box)`
-    margin-left: 2%;
+    margin-left: 30%;
     margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black;
     border-radius: 10px;
-    padding: 180px;
-    padding-right: 202px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 3px;
     cursor: pointer;
+    width: 41%;
+    text-align: center;
 `;
 
 export default function Signup() {
@@ -52,15 +67,17 @@ export default function Signup() {
         <MainContainerForSignup>
             <SubMainContainer>
                 <AppInfo>
-                    <Typography style={{fontSize: '40px', alignItems: 'center', paddingTop: '200px'}}>OpenUp</Typography>
+                    <Typography style={{fontSize: '40px', alignItems: 'center', paddingTop: '200px', paddingBottom: '35px', marginLeft: '30px'}}>OpenUp</Typography>
                     <Typography style={{fontSize: '20px', textAlign: 'start', marginTop: '-40px'}}>Connect with each other</Typography>
                 </AppInfo>
                 <SignupInfo>
                     <Typography style={{fontSize: '20px', textAlign: 'start', marginTop: '10px', marginLeft: '30%'}}>Create New Account</Typography>
-                    <TextFieldContainer>
-                        <TextField placeholder="Phone Number" />
-                        <TextField placeholder="******" />
-                    </TextFieldContainer>
+                    <TextFieldContainer1>
+                        <TextField placeholder="Enter Your Phone Number" fullWidth size="small" sx={{border: 'none', "& fieldset": { border: 'none' }}}/>
+                    </TextFieldContainer1>
+                    <TextFieldContainer2>
+                        <TextField placeholder="Set Password" fullWidth size="small" sx={{border: 'none', "& fieldset": { border: 'none' }}}/>
+                    </TextFieldContainer2>
                     <BtnForSignup>Signup</BtnForSignup>
                     <Link to={"/"}>
                         <Typography style={{textAlign: 'start', marginLeft: '30.6%'}}>Already have a account</Typography>
