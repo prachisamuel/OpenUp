@@ -9,3 +9,19 @@ export const addLike = async (user) => {
         return error.response;
     }
 }
+
+export const authenticateSignup = async (user) => {
+    try {
+        return await axios.post(`${URL}/signup`, user)
+    } catch (error) {
+        console.log('Error while calling like API: ', error);
+        return error.response;
+    }
+}
+export const authenticateLogin = async (user) => {
+    try {
+        return await axios.post(`${URL}/login`, user)
+    } catch (error) {
+        console.log('Error while calling login API: ', error);
+    }
+}

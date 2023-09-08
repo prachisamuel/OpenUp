@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {AppBar,Box,Toolbar} from '@mui/material';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //components
 import Search from './Search';
@@ -12,7 +12,7 @@ const StyledNavbar = styled(AppBar)`
     margin-bottom: 20px;
 `;
 
-const LogoContainer = styled(Box)`
+const LogoContainer = styled(Link)`
     margin-left: 12%;
     line-height: 0;
     color: #FFFFFF;
@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
         <StyledNavbar>
             <Toolbar>
-                <LogoContainer>
+                <LogoContainer to='/'>
                     <img src={logoURL} alt="logo" style={{width: 160}} />
                 </LogoContainer>
                 <Search />

@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //components
-import Navbar from './Component/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import DataProvider from './context/DataProvider';
 import { Box} from "@mui/material";

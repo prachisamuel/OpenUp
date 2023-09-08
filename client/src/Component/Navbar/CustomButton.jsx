@@ -1,9 +1,11 @@
-
-import { Box,Button,styled } from "@mui/material";
+import   { useState,useContext} from 'react';
+import { Box,Button,Typography,styled } from "@mui/material";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import IconButton from "@mui/material/IconButton";
+import { useNavigate } from 'react-router-dom';
 
-
+//components
+import { Datacontext } from '../../context/DataProvider';
 
 const Wrapper = styled(Box)(({ theme }) => ({
     margin: '0 3% 0 auto',
@@ -46,11 +48,24 @@ const LoginButton = styled(Button)(({ theme }) => ({
     }
 }));
 
+
+
 const CustomButton = () =>{
+    const navigate = useNavigate();
+    const toLogin = () => {
+        navigate('/login');
+    }
+
+    const {account} = useContext(Datacontext);
+
     return (
         <Wrapper>
-            <LoginButton> Login</LoginButton> 
-            <IconButton size="large">
+            {
+                account ? <Typography style={{fontSize: '20px', alignItems: 'center'}}> {account}</Typography>:
+                    <LoginButton onClick={() => toLogin()}> Login</LoginButton> 
+
+            }
+                <IconButton size="large">
                 <NotificationsIcon style={{color: "white"}} />
             </IconButton>
         </Wrapper>
